@@ -5,13 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hamming Code Calculator</title>
-    <meta name="name" value="">
+    <meta name="name" value="Hamming Code Calculator">
+
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <link rel="stylesheet" href="style.css">
+             
 </head>
 <body>
 
+    <div class="container">
+
+        <div class="card flatten mt-20">
+
+            <div class="card-content">
+
+             
+                    <form action="" id="hamming-form" class="col s12">
+                        <input type="text"  id="parity-bits" name="parity-bits" placeholder="Parity bits for transport" class="validate" autocomplete="off"/>
+                        
+            
+                        <button class="waves-effect waves-light btn blue" type="submit">Calculate</button>
+                            
+                
+                    </form>
+              
+
+            </div>
+                
+
+        </div>
+
+        
+        
+        <div class="row">
+            <div class="col s12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pass No</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row-template hide">
+                            <td>1</td>
+                            <td>sample</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+        crossorigin="anonymous"></script>
+
     <script src="src/main.js"></script>
     <script>
-        calculate("10101000101");
+
+        $(document).ready(function(){
+
+            $('#hamming-form').submit(function(e){
+                e.preventDefault();
+
+                let _input = $("#parity-bits").val();
+                
+                console.log(calculate(_input));
+
+
+
+            });
+
+
+        })
+
+
+        // calculate("10101000101");
         
     </script>
 </body>
